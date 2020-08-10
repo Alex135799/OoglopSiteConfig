@@ -1,11 +1,11 @@
 import { expect as expectCDK, matchTemplate, MatchStyle } from '@aws-cdk/assert';
 import * as cdk from '@aws-cdk/core';
-import * as OoglopSiteConfig from '../lib/ooglop_site_config-stack';
+import * as OoglopSiteConfig from '../lib/infrastructure/ooglop_site_infrastructure';
 
 test('Empty Stack', () => {
     const app = new cdk.App();
     // WHEN
-    const stack = new OoglopSiteConfig.OoglopSiteConfigStack(app, 'MyTestStack');
+    const stack = new OoglopSiteConfig.OoglopSiteInfrastructure(app, 'MyTestStack');
     // THEN
     expectCDK(stack).to(matchTemplate({
       "Resources": {}

@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
-import { OoglopSiteConfigStack } from '../lib/ooglop_site_config-stack';
+import { OoglopSiteInfrastructure } from '../lib/infrastructure/ooglop_site_infrastructure';
+import { OoglopSiteCodePipeline } from '../lib/front_end_code/ooglop_site_code_pipeline';
 
 const app = new cdk.App();
-new OoglopSiteConfigStack(app, 'OoglopSiteConfigStack');
+new OoglopSiteInfrastructure(app, 'OoglopSiteInfrastructure');
+new OoglopSiteCodePipeline(app, 'OoglopSiteCodePipeline');
